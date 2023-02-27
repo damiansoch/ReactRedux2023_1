@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
-import getImages from "./api";
-import ImageShow from "./components/ImageShow";
-import SearchBar from "./components/SearchBar";
+import { useEffect, useState } from 'react';
+import getImages from './api';
+import ImageList from './components/ImageList';
+
+import SearchBar from './components/SearchBar';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [picturesArray, setPicturesArray] = useState([]);
-  console.log(picturesArray);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPicturesArray(await getImages(searchTerm));
-    setSearchTerm("");
+    setSearchTerm('');
   };
 
   return (
@@ -21,7 +21,7 @@ function App() {
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
       />
-      <ImageShow picturesArray={picturesArray} />
+      <ImageList picturesArray={picturesArray} />
     </>
   );
 }

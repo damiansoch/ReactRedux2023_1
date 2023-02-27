@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-const ImageShow = ({ picturesArray }) => {
+const ImageShow = ({ picture }) => {
   return (
     <>
-      {picturesArray.map((picture) => (
+      {
         <img
           key={picture.id}
-          src={picture.urls.thumb}
+          src={picture.urls.small}
           alt={picture.alt_description}
         />
-      ))}
+      }
     </>
   );
 };

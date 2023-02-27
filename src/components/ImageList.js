@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
 
-const ImageList = () => {
+import ImageShow from './ImageShow';
+
+const ImageList = ({ picturesArray }) => {
   return (
     <div>
-      <h1>ImageList</h1>
+      {picturesArray.map((picture) => (
+        <ImageShow picture={picture} key={picture.id} />
+      ))}
     </div>
   );
 };
